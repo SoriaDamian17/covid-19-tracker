@@ -64,7 +64,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  return <div className="container">{country ? barChart : lineChart}</div>;
+  return <div className="charts">{country ? barChart : lineChart}</div>;
 };
 
 export default Chart;
