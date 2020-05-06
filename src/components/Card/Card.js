@@ -1,26 +1,29 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
-import cx from 'classnames';
 
-import styles from './Card.scss';
+import './Card.scss';
 
-const CardComponent = ({ title, typeData, message, value, lastUpdate }) => {
-  const styleData = styles[typeData];
+const CardComponent = ({ title, typeData, message, data, lastUpdate }) => {
+
+  if (!data) {
+    return 'Loading...';
+  }
+
   return (
     <Grid
       item
       xs={12}
       md={3}
       component={Card}
-      className={cx(styles.card, styleData)}
+      className={`card ${typeData}`}
     >
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
         <Typography variant="h5" component="h2">
-          <CountUp start={0} end={value} duration={2.75} separator="," />
+          <CountUp start={0} end={data.value} duration={2.75} separator="," />
         </Typography>
         <Typography color="textSecondary">
           {new Date(lastUpdate).toDateString()}
