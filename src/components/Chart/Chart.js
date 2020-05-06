@@ -3,7 +3,7 @@ import { Line, Bar } from 'react-chartjs-2';
 
 import { fetchDailyData } from '../../api';
 
-import styles from './Chart.scss';
+import './Chart.scss';
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
@@ -64,9 +64,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  return (
-    <div className={styles.container}>{country ? barChart : lineChart}</div>
-  );
+  return <div className="container">{country ? barChart : lineChart}</div>;
 };
 
 export default Chart;
