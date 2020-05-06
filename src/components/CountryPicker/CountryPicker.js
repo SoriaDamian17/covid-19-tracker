@@ -24,6 +24,7 @@ const Countries = ({ handleCountryChange }) => {
       >
         <option value="">Global</option>
         {countries.map((country, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <option key={index} value={country}>
             {country}
           </option>
