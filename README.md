@@ -3,6 +3,7 @@
 This project is about COVID-19 Tracker/Stats Application. I use React with the addition of Charts.js, Material UI, and many different modules.
 
 # Screen Shot
+![Alt text](doc/screenshot.png?raw=true "ScreenShot")
 
 ## How to use the project locally
 
